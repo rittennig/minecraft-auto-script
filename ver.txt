@@ -1,1 +1,0 @@
-server_version = '21.3'
