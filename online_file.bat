@@ -19,10 +19,10 @@ set ser_props_crack=https://raw.githubusercontent.com/rittennig/minecraft-auto-s
     echo @ Minecraft All-in-one Script @
     echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     echo ...............................
-    echo (1) Full Auto (No-crack, Papermc)
-    echo (2) Full Auto (Cracked, Papermc)
-    echo (3) Full Auto (No-crack, Vanilla)
-    echo (4) Full Auto (Cracked, Vanilla)
+    echo (1) Full Auto (No-crack, Papermc) (Paper Has No 1.17 File, So No Update)
+    echo (2) Full Auto (Cracked, Papermc) (Paper Has No 1.17 File, So No Update)
+    echo (3) Full Auto (No-crack, Vanilla) (This One is 1.17)
+    echo (4) Full Auto (Cracked, Vanilla) (This One is 1.17)
     echo (5) Install NGROK (For Non-Public IP)
     echo (6) Exit the Program (Don't Use the X on top or CTRL + C)
 
