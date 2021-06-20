@@ -24,7 +24,8 @@ set ser_props_crack=https://raw.githubusercontent.com/rittennig/minecraft-auto-s
     echo (3) Full Auto (No-crack, Vanilla) (This One is 1.17)
     echo (4) Full Auto (Cracked, Vanilla) (This One is 1.17)
     echo (5) Install NGROK (For Non-Public IP)
-    echo (6) Exit the Program (Don't Use the X on top or CTRL + C)
+    echo (6) Install New Java Version (OpenJDK 16) (DO THIS FIRST IF YOU WANT TO PLAY ON 1.17)
+    echo (7) Exit the Program (Don't Use the X on top or CTRL + C)
 
     set /p selection=Select a Number and press Enter:
     if %selection%==1 goto full_auto_legit
@@ -32,8 +33,9 @@ set ser_props_crack=https://raw.githubusercontent.com/rittennig/minecraft-auto-s
     if %selection%==3 goto full_auto_legit_v
     if %selection%==4 goto full_auto_cracked_v
     if %selection%==5 goto ngrok_installer
-    if %selection%==6 goto exitchoda
-    if %selection%==7 goto egg
+    if %selection%==6 goto opn_jdk_instllr
+    if %selection%==7 goto exitchoda
+    if %selection%==8 goto egg
 
 
 :full_auto_cracked
@@ -54,7 +56,7 @@ set ser_props_crack=https://raw.githubusercontent.com/rittennig/minecraft-auto-s
 
 :full_auto_legit_v
     cls
-    echo Downloading The Minecraft Server Files Version 1.16.5 from Mojang!
+    echo Downloading The Minecraft Server Files Version 1.17 from Mojang!
     curl -o server.jar %mojang_jar%
     curl -o eula.txt %eula_txt%
     curl -o server.properties %ser_props_legit%
@@ -62,11 +64,22 @@ set ser_props_crack=https://raw.githubusercontent.com/rittennig/minecraft-auto-s
 
 :full_auto_cracked_v
     cls
-    echo Downloading The Minecraft Server Files Version 1.16.5 from Mojang!
+    echo Downloading The Minecraft Server Files Version 1.17 from Mojang!
     curl -o server.jar %mojang_jar%
     curl -o eula.txt %eula_txt%
     curl -o server.properties %ser_props_crack%
     goto make_start_file
+
+:opn_jdk_instllr
+    ::Binaries of OpenJDK From https://github.com/AdoptOpenJDK/openjdk16-binaries
+    cls
+    echo This is New Verision of Java Needed by Minecraft 1.17 and above.
+    echo Now Downloading And Installing Java 16 This Might Be done while Loading the server.
+
+    curl -L https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_x64_windows_hotspot_16.0.1_9.msi -o openjdk_install.msi
+    
+    msiexec /i openjdk_install.msi ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome INSTALLDIR="c:\Program Files\AdoptOpenJDK\" /quiet
+    goto begin
 
 :make_start_file
     cls
